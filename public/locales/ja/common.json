@@ -1,0 +1,14 @@
+{
+  "welcome": "ようこそ",
+  "description": "これはポモドーロタイマーアプリです。",
+  "start": "スタート",
+  "pause": "ポーズ",
+  "reset": "リセット",
+  "set": "セット",
+  "sets": "セット数",
+  "selectAvatar": "アバター選択",
+  "selectSound": "音楽選択",
+  "privacyPolicy": "プライバシーポリシー",
+  "accountSettings": "アカウント設定",
+  "notificationSettings": "通知設定"
+}

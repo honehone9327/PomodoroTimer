@@ -1,0 +1,17 @@
+{
+    "workbench.settings.useSplitJSON": false,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.includeLanguages": {
+      "plaintext": "javascript",
+      "typescript": "javascript",
+      "typescriptreact": "javascript",
+      "javascriptreact": "javascript"
+    },
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false
+  }
+  

@@ -1,0 +1,14 @@
+/* src/styles/Timer.module.css */
+
+/* スライダーのカスタムスタイル */
+.slider-blue input[type="range"] {
+  @apply appearance-none w-full h-2 bg-blue-200 rounded-lg;
+}
+
+.slider-blue input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 bg-blue-500 rounded-full cursor-pointer;
+}
+
+.slider-blue input[type="range"]::-moz-range-thumb {
+  @apply appearance-none w-4 h-4 bg-blue-500 rounded-full cursor-pointer;
+}
