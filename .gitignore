@@ -1,2 +1,4 @@
 # 環境変数
 .env.local
+# node_modulesフォルダを無視する
+node_modules/
