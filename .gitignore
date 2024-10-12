@@ -2,3 +2,8 @@
 .env.local
 # node_modulesフォルダを無視する
 node_modules/
+# その他の無視したいファイルやフォルダ
+.env
+dist/
+build/
+.DS_Store
