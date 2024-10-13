@@ -9,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  as: Component = 'Button', // デフォルトは 'Button'
+  as: Component = 'button', // デフォルトは 'button'（小文字）
   variant = 'default',
   size = 'medium',
   children,

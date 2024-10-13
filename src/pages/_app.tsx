@@ -5,6 +5,7 @@ import { appWithTranslation } from 'next-i18next'
 import '../styles/globals.css'
 import Header from '@/components/common/Header'
 import Footer from '@/components/common/Footer'
+import ErrorBoundary from '@/components/ErrorBoundary' // インポート
 import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -15,11 +16,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
 
   return (
-    <>
+    <ErrorBoundary> {/* エラーバウンダリでラップ */}
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </ErrorBoundary>
   )
 }
 
