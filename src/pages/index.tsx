@@ -6,6 +6,7 @@ const Home: React.FC = () => {
   const [hasError, setHasError] = useState(false);
 
   const handleClick = () => {
+    alert("ボタンがクリックされました");
     setHasError(true);
   };
 
