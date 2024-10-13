@@ -29,18 +29,17 @@ class ErrorBoundary extends React.Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex items-center justify-center h-screen">
-          <div className="text-center">
+        <div className="flex items-center justify-center h-screen bg-gray-100">
+          <div className="text-center p-4 bg-white rounded shadow">
             <h1 className="text-2xl font-bold mb-4">アプリケーションでエラーが発生しました。</h1>
-            <p className="text-lg">ブラウザのコンソールを確認するか、開発者に連絡してください。</p>
-            {/* 必要に応じてエラーメッセージを表示 */}
+            <p className="text-lg">ページをリロードするか、後ほど再度お試しください。</p>
             {this.state.error && <pre className="mt-4 text-left">{this.state.error.toString()}</pre>}
           </div>
         </div>
       );
     }
 
-    return this.props.children; 
+    return this.props.children;
   }
 }
 
