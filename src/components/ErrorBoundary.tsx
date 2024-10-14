@@ -23,18 +23,16 @@ class ErrorBoundary extends React.Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error("Uncaught error:", error, errorInfo);
-    // ここで外部のエラートラッキングサービスに送信することも可能
+    // 必要に応じてエラートラッキングサービスに送信
   }
 
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex items-center justify-center h-screen bg-gray-100">
-          <div className="text-center p-4 bg-white rounded shadow">
-            <h1 className="text-2xl font-bold mb-4">アプリケーションでエラーが発生しました。</h1>
-            <p className="text-lg">ページをリロードするか、後ほど再度お試しください。</p>
-            {this.state.error && <pre className="mt-4 text-left">{this.state.error.toString()}</pre>}
-          </div>
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <h1>アプリケーションでエラーが発生しました。</h1>
+          <p>ページをリロードするか、後ほど再度お試しください。</p>
+          {this.state.error && <pre>{this.state.error.toString()}</pre>}
         </div>
       );
     }

@@ -10,10 +10,24 @@ import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    // 通知許可のリクエストを一時的に無効化
-    // if (typeof window !== 'undefined' && Notification.permission !== 'granted') {
-    //   Notification.requestPermission();
-    // }
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    // Notification APIのサポート確認とエラーハンドリング
+    if ('Notification' in window && !isMobile) {
+      if (Notification.permission !== 'granted') {
+        Notification.requestPermission()
+          .then((permission) => {
+            console.log(`Notification permission: ${permission}`);
+          })
+          .catch((error) => {
+            console.error("Notification permission request failed:", error);
+          });
+      }
+    } else if (isMobile) {
+      console.log("Notifications are not requested on mobile devices.");
+    } else {
+      console.warn("This browser does not support notifications.");
+    }
 
     // グローバルエラーハンドリングの追加
     window.onerror = function(message, source, lineno, colno, error) {
