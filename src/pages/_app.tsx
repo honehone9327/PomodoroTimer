@@ -1,12 +1,12 @@
 // src/pages/_app.tsx
 
+import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import '../styles/globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import ErrorBoundary from '@/components/ErrorBoundary';
-import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -29,14 +29,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       console.warn("This browser does not support notifications.");
     }
 
-    // グローバルエラーハンドリングの追加
-    window.onerror = function(message, source, lineno, colno, error) {
-      console.error("Global error caught:", message, source, lineno, colno, error);
-    };
+    // グローバルエラーハンドリングの追加（コメントアウト）
+    // window.onerror = function(message, source, lineno, colno, error) {
+    //   console.error("Global error caught:", message, source, lineno, colno, error);
+    // };
 
-    window.onunhandledrejection = function(event) {
-      console.error("Unhandled promise rejection:", event.reason);
-    };
+    // window.onunhandledrejection = function(event) {
+    //   console.error("Unhandled promise rejection:", event.reason);
+    // };
   }, []);
 
   return (
